@@ -12,6 +12,8 @@ _This simple band tracking app allows a user track which venues a band has perfo
 
 * _Clone this repository_
 * _Install Sinatra and Postgres_
+* _Open Terminal_
+* _run Postgres and psql_
 * _In the band_tracker folder, run the following commands:_
 
   _bundle_
