@@ -1,14 +1,14 @@
 <h2>Venue List</h2>
 
-<div class="col-md-7">
+<div class="col-md-8">
   <h3>Band Venues</h3>
   <% if @venues.any?() %>
     <ul>
       <% @venues.each() do |venue|%>
-        <li><a href="/venues/<%=venue.id%>"><%=venue.name%></a> 
+        <li><a href="/venues/<%=venue.id%>"><%=venue.name%></a>
         <form class="" action="/venues/<%=venue.id%>/delete" method="post">
           <input type="hidden" name="_method" value="delete">
-          <button type="submit" name="button">Delete this venue</button>
+          <button type="submit" name="button" class= "delete_button">Delete this venue</button>
 
         </form></li>
       <% end %>
@@ -19,7 +19,7 @@
   <a href="/">Return to Band Tracker Home</a>
 </div>
 
-<div class="col-md-5">
+<div class="col-md-4">
   <h3>Add a venue</h3>
   <form class="" action="/venues" method="post">
     <p><input type="text" name="name" placeholder="Enter a venue name"></p>
@@ -82,7 +82,3 @@
   </form>
 
 </div>
-
-
-
-<p><a href="/">Band Tracker Home</a></p>
