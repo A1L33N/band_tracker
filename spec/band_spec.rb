@@ -6,5 +6,10 @@ describe(Band) do
   end
 
   it { should validate_presence_of(:name) }
-  it { should validate_presence_of(:type) }
+  it { should validate_presence_of(:category) }
+
+  it 'capitalizes all the words in a band name' do
+    new_band = Band.create({:name => 'mouse rat', :category => 'rock'})
+    expect(new_band.name).to eq('Mouse Rat')
+  end
 end
