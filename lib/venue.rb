@@ -3,10 +3,11 @@ class Venue <ActiveRecord::Base
 
   validates(:name, {:presence => true, :length => { :maximum => 50 }})
   validates(:location, {:presence => true, :length => { :maximum => 50 }})
-  before_save(:capitlize_words)
+  before_save(:capitalize_words)
 
+  
 private
-  define_method(:capitlize_words) do
+  define_method(:capitalize_words) do
     self.name = name.split.map(&:capitalize).join(' ')
   end
 end

@@ -1,0 +1,44 @@
+<h2><%=@band.name%> Info</h2>
+<h3>Music Type: <%=@band.category%></h3>
+
+<div class="col-md-7">
+<h3> Venues this band has played at:</h3>
+<% if @venues.any?() %>
+    <ul>
+      <% @venues.each() do |venue| %>
+        <li><%=venue.name %></li>
+      <% end %>
+    </ul>
+<% else %>
+  <p>Looks like this band hasn't had any shows yet.</p>
+<% end %>
+<a href="/">Return to Band Tracker Home</a>
+</div>
+
+<div class="col-md-5">
+  <h3>Update Band Info:</h3>
+  <form action="/bands/<%=@band.id%>/update_name" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <input type="text" name="name" placeholder="Update band name">
+    <button type="submit">Update Band Name</button>
+  </form>
+
+  <% if @all_venues.any?() %>
+  <form class="" action="/bands/<%=@band.id%>/add_venues" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <p><label for="venues">Add venues</label></p>
+  <% @all_venues.each() do |venue| %>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="venue_ids[]" value="<%= venue.id() %>"><%= venue.name() %>
+      </label>
+    <% end %>
+    </div>
+    <button type="submit">Add Venues</button>
+  </form>
+
+  <%else%>
+  <p>Oops! Looks like we need some venues in our database.<a href="/venues">Add venues here</a></p>
+  <%end%>
+
+</div>

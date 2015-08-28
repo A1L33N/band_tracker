@@ -1,0 +1,29 @@
+<div class="col-md-7">
+  <h3>Bands You Follow</h3>
+  <% if @bands.any?() %>
+    <ul>
+      <% @bands.each() do |band|%>
+        <li><a href="/bands/<%=band.id%>"><%=band.name%></a>
+        <form class="" action="/bands/<%=band.id%>/delete" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit" name="button">Delete this band</button>
+
+        </form></li>
+      <% end %>
+  </ul>
+  <% else %>
+    <h4> You don't follow any bands yet!</h4>
+  <% end %>
+
+  <a href="/">Return to Band Tracker Home</a>
+</div>
+
+<div class="col-md-5">
+  <h3>Add a Band</h3>
+  <form class="" action="/bands" method="post">
+    <p><input type="text" name="name" placeholder="Enter a band name"></p>
+    <p><input type="text" name="category" placeholder="Enter a music category"></p>
+    <button type="submit">Add Band</button>
+  </form>
+
+</div>

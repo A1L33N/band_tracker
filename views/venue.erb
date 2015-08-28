@@ -1,0 +1,18 @@
+<h3><%=@venue.name%> Details</h3>
+
+<h4>Location: <%=@venue.location %></h4>
+
+<% if @bands.any?() %>
+  <p> Bands that have played here:</p>
+  <ul>
+    <% @bands.each() do |band| %>
+      <li><a href="/bands/<%=band.id%>"><%=band.name%></a></li>
+    <% end %>
+  </ul>
+
+<% else %>
+  <p> No bands have played here yet!</p>
+<% end %>
+
+<p><a href="/bands">See bands</a></p>
+<p><a href="/">Return to Band Tracker Home</a></p>
