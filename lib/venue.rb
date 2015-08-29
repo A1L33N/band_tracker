@@ -9,6 +9,6 @@ class Venue <ActiveRecord::Base
 
 private
   define_method(:capitalize_words) do
-    self.name = name.split.map(&:capitalize).join(' ')
+    self.name = name.downcase.split.map(&:capitalize).join(' ')
   end
 end

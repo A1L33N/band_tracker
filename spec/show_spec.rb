@@ -19,4 +19,15 @@ describe(Show) do
       expect(new_show.date).to eq(date)
     end
   end
+
+  describe('#band') do
+    it 'will return the band that played at the show' do
+      new_band = Band.create({:name => 'mouse rat', :category => 'rock'})
+      new_venue = Venue.create({:name => 'the rusty can', :location=> 'Austin, TX'})
+      date = Date.new(2015, 12, 29)
+      new_show = Show.create({:band_id => new_band.id, :venue_id => new_venue.id, :date => date})
+      expect(new_show.band).to eq(new_band)
+
+    end
+  end
 end

@@ -7,7 +7,7 @@
 <% if @shows.any?() %>
     <ul>
       <% @shows.each() do |show| %>
-        <li><%=show.venue.name %>, Date: <%=show.date%></li>
+        <li><%=show.venue.name %>,        Date: <%=show.date%></li>
       <% end %>
     </ul>
 <% else %>
