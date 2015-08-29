@@ -1,5 +1,6 @@
 class Band < ActiveRecord::Base
-  has_and_belongs_to_many(:venues)
+  has_many(:shows)
+  has_many(:venues, through: :shows)
 
   validates(:name, {:presence => true, :length => { :maximum => 50 }})
   validates(:category, {:presence => true, :length => { :maximum => 50 }})

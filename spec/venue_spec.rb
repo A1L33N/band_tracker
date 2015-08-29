@@ -10,8 +10,8 @@ describe(Venue) do
   end
 
   describe '#bands' do
-    it { should have_and_belong_to_many(:bands) }
+    it { should have_many(:bands) }
   end
-  
+
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150828171434) do
+ActiveRecord::Schema.define(version: 20150829192452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +23,12 @@ ActiveRecord::Schema.define(version: 20150828171434) do
     t.datetime "updated_at"
   end
 
-  create_table "bands_venues", force: :cascade do |t|
+  create_table "shows", force: :cascade do |t|
     t.integer  "band_id"
     t.integer  "venue_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date"
   end
 
   create_table "venues", force: :cascade do |t|
