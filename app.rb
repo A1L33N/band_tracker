@@ -27,6 +27,7 @@ end
 get('/bands/:id') do
   id = params.fetch('id').to_i
   @band = Band.find(id)
+  @shows = @band.shows
   @venues = @band.venues
   @all_venues = Venue.all
   erb(:band)
@@ -36,9 +37,11 @@ patch('/bands/:id/add_venues') do
   id = params.fetch('id').to_i
   @band = Band.find(id)
   venue_ids = params.fetch('venue_ids')
+  date = params.fetch('date')
   venue_ids.each() do |id|
     venue = Venue.find(id)
-    @band.venues.push(venue)
+    show = Show.create({:band_id => @band.id, :venue_id => venue.id, :date => date})
+    @band.shows.push(show)
   end
   redirect back
 end
@@ -72,4 +75,10 @@ get('/venues/:id') do
   @bands = @venue.bands
   @all_bands = Venue.all
   erb(:venue)
+end
+
+delete('/venues/:id/delete') do
+  venue = Venue.find(params.fetch('id').to_i)
+  venue.destroy
+  redirect back
 end

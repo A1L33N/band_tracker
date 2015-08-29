@@ -4,10 +4,10 @@
 
 <div class="col-md-7">
 <h3> Venues this band has played at:</h3>
-<% if @venues.any?() %>
+<% if @shows.any?() %>
     <ul>
-      <% @venues.each() do |venue| %>
-        <li><%=venue.name %></li>
+      <% @shows.each() do |show| %>
+        <li><%=show.venue.name %>, Date: <%=show.date%></li>
       <% end %>
     </ul>
 <% else %>
@@ -27,12 +27,13 @@
   <% if @all_venues.any?() %>
   <form class="" action="/bands/<%=@band.id%>/add_venues" method="post">
     <input type="hidden" name="_method" value="patch">
-    <p><label for="venues">Add venues</label></p>
+    <p><label for="venues">Add venues and show dates</label></p>
   <% @all_venues.each() do |venue| %>
     <div class="checkbox">
       <label>
         <input type="checkbox" name="venue_ids[]" value="<%= venue.id() %>"><%= venue.name() %>
       </label>
+      <input type="date" name="date">
     <% end %>
     </div>
     <button type="submit">Add Venues</button>
