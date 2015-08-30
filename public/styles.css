@@ -5,13 +5,14 @@ body {
 }
 
 h1  {
-  font-size: 60px
+  font-size: 50px
 }
 
 h3  {
   font-size: 40px;
 }
 header {
+  font-weight: bolder;
   text-align: center;
   margin-bottom: 50px;
 }

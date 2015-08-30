@@ -1,5 +1,5 @@
 
-<h2><%=@band.name%> Info</h2>
+<h1><%=@band.name%> Info</h1>
 <h3>Music Type: <%=@band.category%></h3>
 
 <div class="col-md-7">
@@ -7,7 +7,7 @@
 <% if @shows.any?() %>
     <ul>
       <% @shows.each() do |show| %>
-        <li><%=show.venue.name %>,        Date: <%=show.date%></li>
+        <li><a href="/venues/<%=show.venue.id%>"><%=show.venue.name %>,    Date: <%=show.date%></a></li>
       <% end %>
     </ul>
 <% else %>
