@@ -70,6 +70,10 @@ end
 get('/venues/:id') do
   id = params.fetch('id').to_i
   @venue = Venue.find(id)
+
+  #####shows?
+  @shows = @venue.shows
+
   @bands = @venue.bands
   @all_bands = Venue.all
   erb(:venue)

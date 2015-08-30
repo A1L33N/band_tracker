@@ -1,5 +1,9 @@
 body {
   background-image: url("https://unsplash.it/1980/1080?image=452");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   font-family: 'Amatic SC', cursive;
   font-size: 20px;
   color: white;
@@ -31,6 +35,11 @@ a {
   font-size: 30px;
 }
 
+header a {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .links {
   text-align: center;
 }
@@ -54,5 +63,9 @@ button {
 }
 
 input {
+  color: black;
+}
+
+select {
   color: black;
 }

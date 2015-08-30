@@ -3,17 +3,16 @@
 
 <h4>Location: <%=@venue.location %></h4>
 
-<% if @bands.any?() %>
+<% if @shows.any?() %>
   <p> Bands that have played here:</p>
   <ul>
-    <% @bands.each() do |band| %>
-      <li><a href="/bands/<%=band.id%>"><%=band.name%></a></li>
+    <% @shows.each() do |show| %>
+      <% band_id = show.band %>
+      <% band = Band.find(band_id)%>
+      <li><a href="/bands/band_id"><%=band.name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= show.date %></a></li>
     <% end %>
   </ul>
 
 <% else %>
   <p> No bands have played here yet!</p>
 <% end %>
-
-<p><a href="/bands">See bands</a></p>
-<p><a href="/">Return to Band Tracker Home</a></p>
