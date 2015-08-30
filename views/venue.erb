@@ -9,7 +9,7 @@
     <% @shows.each() do |show| %>
       <% band_id = show.band %>
       <% band = Band.find(band_id)%>
-      <li><a href="/bands/band_id"><%=band.name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= show.date %></a></li>
+      <li><%=band.name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= show.date %></li>
     <% end %>
   </ul>
 

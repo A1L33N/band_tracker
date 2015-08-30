@@ -72,7 +72,7 @@ get('/venues/:id') do
   @venue = Venue.find(id)
 
   #####shows?
-  @shows = @venue.shows
+  @shows = @venue.shows.order(:date)
 
   @bands = @venue.bands
   @all_bands = Venue.all
