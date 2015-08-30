@@ -36,13 +36,11 @@ end
 patch('/bands/:id/add_venues') do
   id = params.fetch('id').to_i
   @band = Band.find(id)
-  venue_ids = params.fetch('venue_ids')
-  venue_ids.each() do |id|
-    date = params.fetch('date')
-    venue = Venue.find(id)
-    show = Show.create({:band_id => @band.id, :venue_id => venue.id, :date => date})
-    @band.shows.push(show)
-  end
+  venue_id = params.fetch('venue').to_i
+  date = params.fetch('date')
+  venue = Venue.find(venue_id)
+  show = Show.create({:band_id => @band.id, :venue_id => venue.id, :date => date})
+  @band.shows.push(show)
   redirect back
 end
 

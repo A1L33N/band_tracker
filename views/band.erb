@@ -28,15 +28,13 @@
   <form class="" action="/bands/<%=@band.id%>/add_venues" method="post">
     <input type="hidden" name="_method" value="patch">
     <p><label for="venues">Add venues and show dates</label></p>
-  <% @all_venues.each() do |venue| %>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" name="venue_ids[]" value="<%= venue.id() %>"><%= venue.name() %>
-      </label>
-      <input type="date" name="date">
-    <% end %>
-    </div>
-    <button type="submit">Add Venues</button>
+    <select name="venue" type="text">
+      <% @all_venues.each() do |venue| %>
+        <option value="<%= venue.id()%>"> <%= venue.name() %> </option>
+      <% end %>
+    </select>
+    <input type="date" name="date">
+    <button type="submit">Add Show</button>
   </form>
 
   <%else%>
