@@ -1,6 +1,6 @@
 
 <h1><%=@band.name%> Info</h1>
-<h3>Music Type: <%=@band.category%></h3>
+<h2>Music Type: <%=@band.category%></h2>
 
 <div class="col-md-7">
 <h3> Venues this band has played at:</h3>
@@ -33,7 +33,7 @@
         <option value="<%= venue.id()%>"> <%= venue.name() %> </option>
       <% end %>
     </select>
-    <input type="date" name="date">
+    <input type="date" name="date" class='calendar'>
     <button type="submit">Add Show</button>
   </form>
 
