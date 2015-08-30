@@ -1,6 +1,7 @@
 development:
   adapter: postgresql
   database: band_tracker_development
+  host: localhost
 
 test:
   adapter: postgresql
