@@ -54,7 +54,7 @@ end
 
 #### venues
 get('/venues') do
-  @venues = Venue.all
+  @venues = Venue.all.order(:name)
   erb(:venues)
 end
 

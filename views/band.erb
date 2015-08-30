@@ -7,7 +7,7 @@
 <% if @shows.any?() %>
     <ul>
       <% @shows.each() do |show| %>
-        <li><a href="/venues/<%=show.venue.id%>"><%=show.venue.name %>,    Date: <%=show.date%></a></li>
+        <li><a href="/venues/<%=show.venue.id%>"><%=show.venue.name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date: <%=show.date%></a></li>
       <% end %>
     </ul>
 <% else %>
@@ -23,7 +23,8 @@
     <input type="text" name="name" placeholder="Update band name">
     <button type="submit">Update Band Name</button>
   </form>
-
+<br>
+<br>
   <% if @all_venues.any?() %>
   <form class="" action="/bands/<%=@band.id%>/add_venues" method="post">
     <input type="hidden" name="_method" value="patch">
