@@ -9,7 +9,7 @@ get('/') do
 end
 
 get('/bands') do
-  @bands = Band.all
+  @bands = Band.all.order(:name)
   erb(:bands)
 end
 
