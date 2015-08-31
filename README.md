@@ -21,7 +21,7 @@ _This simple band tracking app allows a user track which venues a band has perfo
   _rake db:migrate_
   _load localhost server and view in preferred browser_
 
-
+You can also see the app here: http://ancient-crag-3929.herokuapp.com/
 
 ## Technologies Used
 
